@@ -1,0 +1,219 @@
+{
+ "id": "exemplo",
+ "name": "Quadro de exemplo",
+ "url": "https://trello.com",
+ "lists": [
+  {
+   "id": "l1",
+   "name": "A fazer",
+   "closed": false
+  },
+  {
+   "id": "l2",
+   "name": "Em andamento",
+   "closed": false
+  },
+  {
+   "id": "l3",
+   "name": "Concluído",
+   "closed": false
+  }
+ ],
+ "members": [
+  {
+   "id": "m1",
+   "fullName": "Ana Souza"
+  },
+  {
+   "id": "m2",
+   "fullName": "Bruno Lima"
+  },
+  {
+   "id": "m3",
+   "fullName": "Carla Dias"
+  }
+ ],
+ "cards": [
+  {
+   "id": "c0",
+   "name": "Planejamento da campanha de fim de ano",
+   "desc": "Cartão de exemplo. Substitua data/board.json pelo export do seu quadro.",
+   "shortUrl": "https://trello.com",
+   "idList": "l2",
+   "start": "2026-11-03T15:00:00.000Z",
+   "due": "2026-11-07T15:00:00.000Z",
+   "dueComplete": false,
+   "closed": false,
+   "labels": [
+    {
+     "name": "Marketing",
+     "color": "purple"
+    }
+   ],
+   "idMembers": [
+    "m1"
+   ]
+  },
+  {
+   "id": "c1",
+   "name": "Reunião com cliente",
+   "desc": "Cartão de exemplo. Substitua data/board.json pelo export do seu quadro.",
+   "shortUrl": "https://trello.com",
+   "idList": "l3",
+   "start": null,
+   "due": "2026-11-05T17:00:00.000Z",
+   "dueComplete": true,
+   "closed": false,
+   "labels": [
+    {
+     "name": "Urgente",
+     "color": "red"
+    }
+   ],
+   "idMembers": [
+    "m2",
+    "m3"
+   ]
+  },
+  {
+   "id": "c2",
+   "name": "Fechamento do mês",
+   "desc": "Cartão de exemplo. Substitua data/board.json pelo export do seu quadro.",
+   "shortUrl": "https://trello.com",
+   "idList": "l1",
+   "start": null,
+   "due": "2026-11-30T20:00:00.000Z",
+   "dueComplete": false,
+   "closed": false,
+   "labels": [
+    {
+     "name": "Financeiro",
+     "color": "green"
+    }
+   ],
+   "idMembers": [
+    "m3"
+   ]
+  },
+  {
+   "id": "c3",
+   "name": "Deploy versão 2.4",
+   "desc": "Cartão de exemplo. Substitua data/board.json pelo export do seu quadro.",
+   "shortUrl": "https://trello.com",
+   "idList": "l1",
+   "start": null,
+   "due": "2026-11-12T22:00:00.000Z",
+   "dueComplete": false,
+   "closed": false,
+   "labels": [
+    {
+     "name": "Dev",
+     "color": "blue"
+    },
+    {
+     "name": "Urgente",
+     "color": "red"
+    }
+   ],
+   "idMembers": [
+    "m2"
+   ]
+  },
+  {
+   "id": "c4",
+   "name": "Revisar orçamento 2027",
+   "desc": "Cartão de exemplo. Substitua data/board.json pelo export do seu quadro.",
+   "shortUrl": "https://trello.com",
+   "idList": "l2",
+   "start": "2026-11-10T15:00:00.000Z",
+   "due": "2026-11-14T15:00:00.000Z",
+   "dueComplete": false,
+   "closed": false,
+   "labels": [
+    {
+     "name": "Financeiro",
+     "color": "green"
+    }
+   ],
+   "idMembers": [
+    "m1",
+    "m3"
+   ]
+  },
+  {
+   "id": "c5",
+   "name": "Post Black Friday",
+   "desc": "Cartão de exemplo. Substitua data/board.json pelo export do seu quadro.",
+   "shortUrl": "https://trello.com",
+   "idList": "l1",
+   "start": null,
+   "due": "2026-11-27T12:00:00.000Z",
+   "dueComplete": false,
+   "closed": false,
+   "labels": [
+    {
+     "name": "Marketing",
+     "color": "purple"
+    }
+   ],
+   "idMembers": [
+    "m1"
+   ]
+  },
+  {
+   "id": "c6",
+   "name": "Corrigir bug do login",
+   "desc": "Cartão de exemplo. Substitua data/board.json pelo export do seu quadro.",
+   "shortUrl": "https://trello.com",
+   "idList": "l2",
+   "start": null,
+   "due": "2026-11-10T18:00:00.000Z",
+   "dueComplete": false,
+   "closed": false,
+   "labels": [
+    {
+     "name": "Dev",
+     "color": "blue"
+    }
+   ],
+   "idMembers": [
+    "m2"
+   ]
+  },
+  {
+   "id": "c7",
+   "name": "Treinamento da equipe",
+   "desc": "Cartão de exemplo. Substitua data/board.json pelo export do seu quadro.",
+   "shortUrl": "https://trello.com",
+   "idList": "l1",
+   "start": null,
+   "due": "2026-11-18T13:00:00.000Z",
+   "dueComplete": false,
+   "closed": false,
+   "labels": [],
+   "idMembers": [
+    "m1",
+    "m2",
+    "m3"
+   ]
+  },
+  {
+   "id": "c8",
+   "name": "Ideias para 2027",
+   "desc": "Cartão de exemplo. Substitua data/board.json pelo export do seu quadro.",
+   "shortUrl": "https://trello.com",
+   "idList": "l1",
+   "start": null,
+   "due": null,
+   "dueComplete": false,
+   "closed": false,
+   "labels": [
+    {
+     "name": "Marketing",
+     "color": "purple"
+    }
+   ],
+   "idMembers": []
+  }
+ ]
+}

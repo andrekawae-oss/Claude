@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calendário Trello</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="title">
+      <h1 id="month-label">—</h1>
+      <span id="board-label" class="muted"></span>
+    </div>
+    <div class="nav">
+      <button id="prev" aria-label="Mês anterior">‹</button>
+      <button id="today">Hoje</button>
+      <button id="next" aria-label="Próximo mês">›</button>
+    </div>
+  </header>
+
+  <section class="toolbar">
+    <input id="search" type="search" placeholder="Buscar cartão…">
+    <select id="filter-board"><option value="">Todos os quadros</option></select>
+    <select id="filter-list"><option value="">Todas as listas</option></select>
+    <select id="filter-label"><option value="">Todas as etiquetas</option></select>
+    <select id="filter-member"><option value="">Todos os membros</option></select>
+    <label class="check"><input id="show-done" type="checkbox" checked> Concluídos</label>
+    <label class="check"><input id="show-archived" type="checkbox"> Arquivados</label>
+    <button id="import-btn" class="secondary" title="Carregar um JSON exportado do Trello só neste navegador">Importar JSON</button>
+    <input id="import-file" type="file" accept=".json,application/json" multiple hidden>
+  </section>
+
+  <div id="notice" class="notice" hidden></div>
+
+  <main>
+    <div class="weekdays">
+      <div>Dom</div><div>Seg</div><div>Ter</div><div>Qua</div><div>Qui</div><div>Sex</div><div>Sáb</div>
+    </div>
+    <div id="grid" class="grid"></div>
+    <div id="undated" class="undated" hidden>
+      <h2>Sem data <span id="undated-count" class="muted"></span></h2>
+      <div id="undated-list"></div>
+    </div>
+  </main>
+
+  <footer class="muted" id="footer"></footer>
+
+  <dialog id="card-dialog">
+    <form method="dialog">
+      <div class="dlg-head">
+        <h2 id="dlg-title"></h2>
+        <button class="close" aria-label="Fechar">×</button>
+      </div>
+      <div id="dlg-meta" class="dlg-meta"></div>
+      <div id="dlg-labels" class="labels"></div>
+      <div id="dlg-desc" class="dlg-desc"></div>
+      <a id="dlg-link" target="_blank" rel="noopener">Abrir no Trello ↗</a>
+    </form>
+  </dialog>
+
+  <div id="drop-overlay" hidden>Solte o JSON do Trello aqui</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
