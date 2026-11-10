@@ -2,7 +2,7 @@ name: Publicar calendário
 
 on:
   push:
-    branches: [main]
+    branches: [main, claude/trello-calendar-integration-bpyxkx]
   workflow_dispatch:
   schedule:
     # a cada hora, para puxar mudanças de quadros públicos do Trello
