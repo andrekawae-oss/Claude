@@ -1,0 +1,1 @@
+Coloque aqui os manuais gerados (manual-*.html) para publicá-los no site.

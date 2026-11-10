@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gerador de Manual de Montagem</title>
+  <link rel="stylesheet" href="editor.css">
+  <script type="importmap">
+    { "imports": { "three": "./vendor/three.module.js", "three/addons/": "./vendor/addons/" } }
+  </script>
+</head>
+<body>
+  <header class="bar">
+    <strong class="brand">Manual de Montagem</strong>
+    <input id="project-name" class="name" placeholder="Nome do móvel / projeto" disabled>
+    <div class="actions">
+      <button id="btn-open" class="primary">Abrir modelo</button>
+      <input id="file-model" type="file" multiple hidden accept=".dae,.glb,.gltf,.obj,.skp,.jpg,.jpeg,.png,.tga,.bmp,.bin">
+      <button id="btn-project-load" title="Abrir um projeto (.json) salvo antes" disabled>Abrir projeto</button>
+      <input id="file-project" type="file" hidden accept=".json,application/json">
+      <button id="btn-project-save" title="Baixar as etapas num arquivo .json" disabled>Salvar projeto</button>
+      <button id="btn-preview" disabled>Pré-visualizar</button>
+      <button id="btn-export" class="accent" disabled>Gerar manual</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="panel parts-panel">
+      <div class="panel-head">
+        <h2>Peças <span id="parts-count" class="muted"></span></h2>
+      </div>
+      <div class="parts-tools">
+        <input id="parts-search" type="search" placeholder="Buscar peça…">
+        <select id="parts-filter">
+          <option value="">Todas</option>
+          <option value="free">Sem etapa</option>
+          <option value="used">Já em etapa</option>
+        </select>
+      </div>
+      <div id="sel-bar" class="sel-bar" hidden>
+        <span id="sel-count"></span>
+        <select id="sel-category" title="Mudar categoria das selecionadas"></select>
+        <button id="sel-split" title="Quebrar as peças selecionadas nas subpeças que as formam">Dividir</button>
+        <button id="sel-clear" title="Limpar seleção">✕</button>
+      </div>
+      <div id="parts-list" class="parts-list"></div>
+      <p class="hint muted">Clique para selecionar · Ctrl/Shift para várias · também dá para clicar no 3D</p>
+    </aside>
+
+    <main class="viewport">
+      <div id="stage" class="stage"></div>
+      <div id="empty" class="empty">
+        <div class="empty-box">
+          <h2>Comece pelo modelo do SketchUp</h2>
+          <ol>
+            <li>No SketchUp Pro: <b>Arquivo → Exportar → Modelo 3D…</b></li>
+            <li>Em “Tipo”, escolha <b>COLLADA (*.dae)</b> e salve.</li>
+            <li>Arraste o arquivo <b>.dae</b> (e a pasta de texturas, se houver) para esta tela.</li>
+          </ol>
+          <p class="muted">Também aceita .glb, .gltf e .obj. Os componentes bloqueados pelo plugin podem ser exportados normalmente.</p>
+          <div class="empty-actions">
+            <button id="btn-open-2" class="primary">Escolher arquivo</button>
+            <button id="btn-example">Abrir exemplo</button>
+          </div>
+        </div>
+      </div>
+      <div id="view-tools" class="view-tools" hidden>
+        <button id="vt-all" title="Mostrar o móvel completo">Ver tudo</button>
+        <button id="vt-prev" title="Etapa anterior">◀</button>
+        <span id="vt-label" class="vt-label"></span>
+        <button id="vt-next" title="Próxima etapa">▶</button>
+        <button id="vt-replay" title="Repetir animação">↻</button>
+        <button id="vt-fit" title="Enquadrar">⤢</button>
+        <label class="vt-check" title="Deixa transparentes as peças que já estão em alguma etapa"><input id="vt-ghost" type="checkbox"> Esmaecer já usadas</label>
+      </div>
+      <div id="drop" class="drop" hidden>Solte o modelo aqui</div>
+      <div id="toast" class="toast" hidden></div>
+    </main>
+
+    <aside class="panel steps-panel">
+      <div class="panel-head">
+        <h2>Etapas</h2>
+        <div class="head-actions">
+          <button id="btn-suggest" disabled title="Cria uma sequência inicial pela categoria e posição das peças">Sugerir</button>
+          <button id="btn-add-step" class="primary" disabled>+ Etapa</button>
+        </div>
+      </div>
+      <div id="steps-list" class="steps-list"></div>
+      <div id="summary" class="summary"></div>
+    </aside>
+  </div>
+
+  <script type="module" src="editor.js"></script>
+</body>
+</html>

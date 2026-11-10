@@ -1,0 +1,13 @@
+{
+  "name": "manual-montagem",
+  "private": true,
+  "description": "Gerador de manuais de montagem animados a partir de modelos do SketchUp",
+  "scripts": {
+    "build": "esbuild src/viewer.js --bundle --minify --format=iife --target=es2020 --outfile=build/viewer.bundle.js",
+    "exemplo": "node scripts/gerar-exemplo.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.24.0",
+    "three": "0.170.0"
+  }
+}
